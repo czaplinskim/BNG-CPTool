@@ -1,0 +1,10 @@
+{
+    "manifest_version" : 3,
+    "name": "Syndigo Image Downloader",
+    "description": "Wtyczka do pobierania obrazków z kart Syndigo",
+    "version": "0.1",
+    "aciton": {
+        "default_popup": "index.html",
+        "default_icon": "assets/img/icon.png"
+    }
+}
