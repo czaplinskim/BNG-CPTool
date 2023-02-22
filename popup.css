@@ -1,0 +1,89 @@
+body {
+    width: 20rem;
+    background: #fafbfe;
+    font-family: Lato, sans-serif;
+}
+
+.main-section__header {
+    font-size: 20px;
+}
+
+.main-section__hr {
+    border: 0;
+    height: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.main-section__header {
+    font-size: 32 px;
+}
+
+.main-section__button {
+    width: 100%;
+    padding: 12px 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+    border-radius: 6px;
+    font-size: 13px;
+    border: none;
+    color: #fff;
+    background: linear-gradient(180deg, #4B91F7 0%, #367AF6 100%);
+    background-origin: border-box;
+    box-shadow: 0px 0.5px 1.5px rgba(54, 122, 246, 0.25), inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;   
+}
+
+.main-section__button:hover {
+    background: linear-gradient(180deg, #4486e9 0%, #2b6be3 100%);
+}
+
+.main-section__button:focus {
+    box-shadow: inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2), 0px 0.5px 1.5px rgba(54, 122, 246, 0.25), 0px 0px 0px 3.5px rgba(58, 108, 217, 0.5);
+    outline: 0;
+}
+
+.main-section__button[disabled=disabled], .main-section__button:disabled {
+    background: linear-gradient(180deg, #bababa 0%, #cfd0d3 100%);
+
+}
+
+.scraped-items {
+    display: flex;
+    flex-direction: column;
+    padding-inline-start: 0px;
+}
+
+.scraped-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 15px 15px;
+    margin: 10px 0;
+    box-shadow: 0px 0.5px 1.5px rgba(54, 122, 246, 0.25), inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2);
+
+}
+
+.scraped-item__icon {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50px;
+    margin: 0px 10px 0px 0px;
+}
+
+.scraped-item__title {
+    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.scraped-item__details {
+    font-size: 12px;
+    color: gray;
+}
+

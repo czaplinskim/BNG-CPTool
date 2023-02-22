@@ -1,5 +1,33 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./popup.css" />
+    </head>
     <body>
-        <h1>Syndigo Image Downloader</h1>
+        <template>
+            <h1>Syndigo Assets Downloader BNG</h1>
+        </template>
+        <section class="main-section">
+            <h1 class="main-section__header">Syndigo Image Downloader BNG</h1>
+
+            <hr class="main-section__hr">
+
+            <ul class="scraped-items">
+                <li class="scraped-item">
+                    <img class="scraped-item__icon" src="images/testimg.jpeg">
+                    <p class="scraped-item__title">Picture
+                        <span class="scraped-item__details"> 480px x 480px</span>
+                    </p>
+                </li>
+            </ul>
+
+            <button disabled class="main-section__button">DOWNLOAD ASSETS</button>
+       
+        </section>
+        
+        <script src="./popup.js" type="module"></script>
     </body>
 </html>

@@ -1,8 +1,14 @@
 {
     "manifest_version" : 3,
-    "name": "Syndigo Image Downloader BNG",
+    "name": "Syndigo Assets Downloader BNG",
     "description": "Wtyczka do pobierania obrazków z kart Syndigo",
     "version": "1",
+    "permissions": [
+        "activeTab",
+        "tabs",
+        "storage",
+        "*://example.com/*"
+      ],
     "action": {
         "default_popup": "index.html",
         "default_icon": "images/icon.png"
@@ -12,5 +18,15 @@
         "32": "images/icon_32.png",
         "48": "images/icon_48.png",
         "128": "images/icon_128.png"
-    }
+    },
+    "background": {
+        "service_worker": "popup.js"
+      },
+    "content_scripts": [{
+        "matches": [
+            "https://developer.chrome.com/docs/extensions/*",
+            "https://developer.chrome.com/docs/webstore/*"
+          ],
+        "js": ["content.js"]
+      }]
 }
