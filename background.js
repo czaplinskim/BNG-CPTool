@@ -1,13 +1,12 @@
-// (function () {
-//     var otherWindows = chrome.extension.getBackgroundPage();
-//     console.log(otherWindows.backgroundFunction()); 
-// })();
+// function backgroundFunction () {
+//   return "hello from the background!"
+// }
 
-//   function reddenPage() {
+
+// function reddenPage() {
 //     document.body.style.backgroundColor = 'red';
 //     console.log("Hello Background")
 //   }
-
   
 //   chrome.action.onClicked.addListener((tab) => {
 //     if (!tab.url.includes('chrome://')) {
