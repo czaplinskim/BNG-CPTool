@@ -1,34 +1,65 @@
 const article = document.querySelector("article");
 const longProductsNames = [
-        "04015400755548-83734842-Always Ultra Long (Size 2.pdpd",
-        "04015400755692-83734888-Always Ultra Night (Size 3.pdpd",
         "08001090705662-83736412-Tampax Compak Super Tampons Applicator.pdpd",
         "04015400269793-83736394-Tampax Pearl Super Tampons Applicator.pdpd",
         "08001090705600-83736410-Tampax Compak Regular Tampons 18.pdpd",
+        "08001090705600-83736410-Tampax Compak Regular Tampons 18.pdpd",
+        "08001090705600-83736410-Tampax Compak Regular Tampons 18.pdpd",
+        "04015400755548-83734842-Always Ultra Long (Size 2.pdpd",
+        "04015400755548-83734840-Always Ultra Long (Size 2.pdpd",
         "08001090705723-83736414-Tampax Compak Super Tampons Applicator.pdpd",
         "08001090733795-83736540-Tampax Pearl Regular Tampons Applicator.pdpd"
 
 ]
 
 let productsInfoObject = {}
+let productsInfoArray = []
+let productsInfoArrayTwo = []
 
 longProductsNames.forEach((product, index) => {
 
-    console.log(product.split('-')[0])
-    let tempEan = product.split('-')[0]
-    let tempFpc = product.split('-')[1]
-    let tempObj = { tempEan : tempFpc }
-    productsInfoObject = {...productsInfoObject, {tempEan : tempFpc}}
 
-    // productsInfoArray.push(product.split('-'))
-    // productsInfoArray[index][0] = Number(productsInfoArray[index][0])
-    // console.log(productsInfoArray[index][0])
+    let tempEan = Number(product.split('-')[0])
+    let tempFpc = Number(product.split('-')[1])
+    let tempArr = [tempEan, tempFpc]
 
+    productsInfoArray.push(tempArr)
+    productsInfoArrayTwo.push(tempEan)
+
+ 
 });
 
-// productsInfoArray = productsInfoArray.reduce((a, v) => ({ ...a, [v]: v}), {}) 
 
-console.log(productsInfoObject)
+
+var sortedArray = productsInfoArray.sort(function(a, b) {
+    return a[1] - b[1];
+  })
+
+// productsInfoArrayTwo = productsInfoArrayTwo.sort(function(a, b) {
+//     return b - a;
+//   })
+
+
+  productsInfoArrayTwo.forEach((product, index) => {
+
+    // console.log(productsInfoArrayTwo.indexOf(product, index + 1))
+
+    let doubleIndex = productsInfoArrayTwo.indexOf(product, index + 1)
+
+    if(doubleIndex > 0) {
+         
+        // console.log(doubleIndex)
+        // sortedArray.splice(doubleIndex, 1)
+    }
+
+  })
+
+// const [keys, ...values] = sortedArray;
+// const objects = values.map(array => array.reduce((a, v, i) => ({...a, [keys[i]]: v}), {}));
+
+  sortedArray = sortedArray.reduce((a, v, i) => ({ ...a, [v[0]]: v}), {}) 
+
+console.log(sortedArray)
 
 // `document.querySelector` may return null if the selector doesn't match anything.
 if (article) {
