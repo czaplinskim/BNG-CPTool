@@ -1,33 +1,23 @@
 {
-    "name": "Syndigo Assets Downloader BNG",
-    "description": "Wtyczka do pobierania assetów z kart Syndigo",
+    "name": "Newest FPC Finder",
+    "description": "Chrome Extension that will look for the newest FPC and save your time.",
     "version": "0.1",
-    "manifest_version": 2,
+    "manifest_version": 3,
     "icons": {
         "16": "images/icon_16.png",
         "32": "images/icon_32.png",
         "48": "images/icon_48.png",
         "128": "images/icon_128.png"
     },
-    "actions": {
-      "default_icon": "/images/icon_128.png",
-      "default_popup": "index.html"
-    },
-    "options_page": "/src/Options/index.html",
-    "background": {
-      "persistent": true,
-      "scripts": [
-        "downloadImages.js",
-        "handleUpdates.js"
-      ]
-    },
-    "permissions": [
-      "activeTab",
-      "downloads",
-      "webRequest",
-      "webRequestBlocking",
-      "http://*/*",
-      "https://*/*"
+    "content_scripts": [
+      {
+        "js": ["scripts/content.js"],
+        "matches": [
+          "https://developer.chrome.com/docs/extensions/*",
+          "https://developer.chrome.com/docs/webstore/*"
+        ]
+      }
     ]
+
   }
   
