@@ -9,7 +9,9 @@ const findUrlLanguage = () => {
 
 const startExtenstion = () => {
 
+
     findUrlLanguage() 
+
 
     const findProducts = () => { 
 
@@ -23,14 +25,13 @@ const startExtenstion = () => {
 
     setTimeout(() => {
 
-        const badge = document.createElement("a");
+        const badge = document.createElement("a")
 
         badge.setAttribute('target', '_blank')
         badge.style.cssText = 'color: black; font-weight: 500; margin: 0px 5px; font-size: 13px; cursor: pointer;'
-        badge.textContent = `FPCs`;
-        const searchTab = document.querySelector(".files-browser-bar");
-        searchTab.insertAdjacentElement("beforeend", badge);
-
+        badge.textContent = `FPCs`
+        const searchTab = document.querySelector(".files-browser-bar")
+        searchTab.insertAdjacentElement("beforeend", badge)
         badge.addEventListener("click", () => { createLink(findProducts()) } )
 
     }, 5000)
@@ -38,10 +39,7 @@ const startExtenstion = () => {
 
     const createLink = (array) => {
 
-        console.log(cutNames(array))
-
         const myUrl = new URL("https://pg.browser.synthrone.io/search");
-
         myUrl.searchParams.append('type', 'pdpd')
         myUrl.searchParams.append('language', findUrlLanguage())
         myUrl.searchParams.append('contains', Object.values(cutNames(array)).join(' '))
