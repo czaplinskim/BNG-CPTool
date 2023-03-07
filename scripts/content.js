@@ -26,12 +26,12 @@ const startExtenstion = () => {
         const badge = document.createElement("a");
 
         badge.setAttribute('target', '_blank')
-        badge.style.cssText = 'color: black; font-weight: 500; margin: 0px 5px; font-size: 13px;'
+        badge.style.cssText = 'color: black; font-weight: 500; margin: 0px 5px; font-size: 13px; cursor: pointer;'
         badge.textContent = `FPCs`;
         const searchTab = document.querySelector(".files-browser-bar");
         searchTab.insertAdjacentElement("beforeend", badge);
 
-        badge.addEventListener("click", createLink(findProducts()) )
+        badge.addEventListener("click", () => { createLink(findProducts()) } )
 
     }, 5000)
 
