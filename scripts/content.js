@@ -74,9 +74,7 @@ const startExtenstion = () => {
 }
 
 
-if(window.location.href.indexOf("pdpd") != -1){
-    startExtenstion()
-}
+if(window.location.href.indexOf("pdpd") != -1){ startExtenstion() }
 
 
 
