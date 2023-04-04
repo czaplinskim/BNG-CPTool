@@ -1,0 +1,27 @@
+{
+  "name": "bng-tools",
+  "version": "0.1.0",
+  "description": "BNG Galaxy Tools",
+  "type": "module",
+  "main": "content.js",
+  "scripts": {
+    "compile": "cp -r ./public/** ./dist && tsc --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/czaplinskim/SyndigoImgDownloader.git"
+  },
+  "author": "Michał Czapliński",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/czaplinskim/SyndigoImgDownloader/issues"
+  },
+  "homepage": "https://github.com/czaplinskim/SyndigoImgDownloader#readme",
+  "dependencies": {
+    "typescript": "^5.0.3",
+    "@babel/plugin-transform-modules-commonjs": "^7.21.2"
+  },
+  "devDependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.21.2"
+  }
+}
