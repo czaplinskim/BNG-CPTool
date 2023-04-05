@@ -28,6 +28,7 @@ const createImage = (img: HTMLImageElement) => {
 const iframe = document.querySelector("iframe");
 const container = iframe.querySelector(".syndi_powerpage");
 
+
 console.log(iframe)
 console.log(container)
 
