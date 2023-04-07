@@ -18,7 +18,8 @@
       "js": ["content-script.js"],
       "matches": [
         "https://pg.browser.synthrone.io/*",
-        "https://platform.syndigo.com/enhanced-content/previews/*"
+        "https://platform.syndigo.com/enhanced-content/previews/*",
+        "https://content.syndigo.com/*"
       ]
     }
   ]
