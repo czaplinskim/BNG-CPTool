@@ -48,8 +48,6 @@ const createImage = (link) => {
 }
 
 
-
-
 let apiWidgets;
 let imgArray = []
 const assetsDomain = 'https://content.syndigo.com/asset/';
