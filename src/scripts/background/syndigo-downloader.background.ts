@@ -47,7 +47,6 @@ const createImage = (link) => {
     return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
 }
 
-
 let apiWidgets;
 let imgArray = []
 const assetsDomain = 'https://content.syndigo.com/asset/';
