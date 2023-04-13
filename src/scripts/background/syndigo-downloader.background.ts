@@ -33,8 +33,8 @@ const createImage = (link) => {
     console.log(img)
 
     let canvas: HTMLCanvasElement = document.createElement("canvas")
-    canvas.width = img.width
-    canvas.height = img.height
+    canvas.width = img.width;
+    canvas.height = img.height;
 
     let ctx = canvas.getContext("2d");
     ctx.drawImage(img, 0, 0);
