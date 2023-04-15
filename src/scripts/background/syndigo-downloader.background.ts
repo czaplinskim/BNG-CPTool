@@ -47,6 +47,8 @@ const createImage = (link) => {
     return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
 }
 
+
+
 let apiWidgets;
 
 
