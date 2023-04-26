@@ -9,17 +9,10 @@ const findUrlLanguage = () => {
 
 }
 
-// files-list-element
-// files-list-element-updated
-// files-list-element-created
-
-
 export const startExtenstionFPCFinder = () => {
 
-    
 
     findUrlLanguage() 
-
 
     const findProducts = () => { 
 
@@ -32,19 +25,6 @@ export const startExtenstionFPCFinder = () => {
 
     }
 
-    // setTimeout(() => {
-
-    //     const badgeFPC = document.createElement("a")
-    //     const badgesStyles = 'color: black; font-weight: 500; margin: 0px 5px; font-size: 13px; cursor: pointer;'
-
-    //     badgeFPC.setAttribute('target', '_blank')
-    //     badgeFPC.style.cssText = badgesStyles
-    //     badgeFPC.textContent = `FPCs`
-    //     const searchTab = document.querySelector(".files-browser-bar")
-    //     searchTab.insertAdjacentElement("beforeend", badgeFPC)
-    //     badgeFPC.addEventListener("click", () => { createLink(findProducts()) } )
-
-    // }, 5000)
 
     const createBagde = (badgeName) => {
 
@@ -65,8 +45,6 @@ export const startExtenstionFPCFinder = () => {
     }
 
     createBagde('FPCs')
-    createBagde('SOS')
-
     const createLink = (array) => {
 
         const myUrl = new URL("https://pg.browser.synthrone.io/search");
