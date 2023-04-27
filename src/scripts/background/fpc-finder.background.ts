@@ -18,6 +18,7 @@ export const startExtenstionFPCFinder: Function = () => {
 
         var products = document.querySelectorAll(".name-inner")
 
+        
         // Creates an arrays of products that contains the product-page names ('EAN_FPC_name'). Ex. [05410076776382-81767173-Olay Regenerist Day Face Cream', '07702018401383-81739724-Venus Swirl Blades x6']
 
         var result = Object.keys(products).map((key) => products[key].innerText)
