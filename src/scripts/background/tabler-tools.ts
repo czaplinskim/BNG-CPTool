@@ -1,99 +1,65 @@
-const createBagde: Function = (bagdeName : string) => {
-
-    const badge: HTMLButtonElement = document.createElement('button')
-
-    const badgesStyles: string | HTMLStyleElement = 'border: none; color: black; font-weight: 500; margin: 0px 5px; font-size: 15px; cursor: pointer;'
-    badge.setAttribute('target', '_blank')
-    badge.style.cssText = badgesStyles
-    badge.textContent  = bagdeName
+const createBadge = (badgeName: string): HTMLButtonElement => {
+    const badge = document.createElement('button');
+    const badgesStyles = 'border: none; color: black; font-weight: 500; margin: 0px 5px; font-size: 15px; cursor: pointer;';
     
-    return badge 
+    badge.setAttribute('target', '_blank');
+    badge.style.cssText = badgesStyles;
+    badge.textContent = badgeName;
 
-}
+    badge.addEventListener('click', copyTable);
 
-const appendBagde: Function = () => {
+    return badge;
+};
 
+const appendBadge = () => {
     setTimeout(() => {
+        const badgeAreaSeparator = document.createElement('div');
+        badgeAreaSeparator.className = 'btn-separator';
 
-        const badgeAreaSeparetor: HTMLDivElement = document.createElement('div')
-        badgeAreaSeparetor.className = 'btn-separator'
+        const menuBar = document.querySelector('.topbar-actions') as Element;
 
-        const menuBar: Element = document.querySelector('.topbar-actions')
+        menuBar.insertAdjacentElement('beforeend', createBadge('FPC'));
+        menuBar.insertAdjacentElement('beforeend', createBadge('SoS'));
+        menuBar.insertAdjacentElement('beforeend', createBadge('NSoS'));
+        menuBar.insertAdjacentElement('beforeend', badgeAreaSeparator);
+    }, 5000);
+};
 
-        menuBar.insertAdjacentElement('beforeend', createBagde('FPC'))
-        menuBar.insertAdjacentElement('beforeend', createBagde('SoS'))
-        menuBar.insertAdjacentElement('beforeend', createBagde('NSoS'))
-        menuBar.insertAdjacentElement('beforeend', badgeAreaSeparetor)
+const cutNames = (array: string[]): Array<number[]> => {
+    const productsInfoArray: Array<number[]> = [];
 
+    array.forEach((product) => {
+        const [tempEan, tempFpc] = product.split('-').map(Number);
+        const tempArr = [tempEan, tempFpc];
+        productsInfoArray.push(tempArr);
+    });
 
-    }, 5000)
-    
-}
+    return productsInfoArray;
+};
 
-const cutNames: Function = (array) => {
+const copyTable = () => {
+    const productsTable = document.querySelector('.htCore') as HTMLTableElement;
+    const productsRows = productsTable.querySelector('tbody') as HTMLTableSectionElement;
+    const productRow = productsRows.querySelectorAll('tr');
 
-    let productsInfoArray = []
+    const productsArray: Array<number[] | string> = [];
 
-        array.forEach((product) => {
-
-            let tempEan = Number(product.split('-')[0])
-            let tempFpc = Number(product.split('-')[1])
-            let tempArr = [tempEan, tempFpc]
-        
-            productsInfoArray.push(tempArr)
-        
-        })
-
-    return productsInfoArray
-
-}
-
-
-const copyTable: Function = () => {
-
-    setTimeout(() => {
-
-        const productsTable: HTMLTableElement = document.querySelector('.htCore')
-        const productsRows: HTMLTableSectionElement = document.querySelector('tbody')
-        const productRow = document.querySelectorAll('tr')
-
-        console.log(productRow)
-
-        const productsArray: Array<String | Array<String>> = []
-
-       
-
-
-        productRow.forEach((e, i) => {
-
-            // const tempArray: Array<String> = []
-
-            // console.log(e.childNodes[2].firstChild.textContent)
-
-            if(e.childNodes.length > 10) {
-                const FPC = e.childNodes[2].firstChild.textContent
-                productsArray.push(FPC)
+    productRow.forEach((e) => {
+        if (e.childNodes.length > 10) {
+            const FPC = e.childNodes[2].firstChild?.textContent;
+            if (FPC) {
+                productsArray.push(FPC);
             }
-            
-            // const StartOfShip = e.childNodes[17].childNodes[1]
-            console.log(i)
-            console.log(e)
+        }
 
-            console.log(e.querySelector("th div span"))
+        const startOfShip = e.childNodes[17].childNodes[1];
 
-            
-        })
+        if (e.querySelector('th div span')?.textContent && parseInt(e.querySelector('th div span').textContent || '0', 10) >= 3) {
+            productsArray.push(startOfShip?.textContent || '');
+        }
+    });
+};
 
-        // console.log(productsArray)
-
-
-
-    }, 10000)
-}
-
-export const startExtensionsTabler: Function = () => {
-
-    appendBagde();
-    copyTable();
-
-}
+export const startExtensionsTabler = () => {
+    appendBadge();
+};
